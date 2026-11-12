@@ -1,0 +1,38 @@
+# Format example. Resolve paths for your image and explain every grant.
+# Stage only runtime code under /app; do not place labels or credentials there.
+version: 1
+filesystem_policy:
+  include_workdir: false
+  read_only:
+    - /bin
+    - /usr
+    - /lib
+    - /lib64
+    - /etc
+    - /proc
+    - /dev/urandom
+    - /app
+    - /target/corpus
+    - /target/queries
+    - /target/manifests
+  read_write:
+    - /sandbox/work
+    - /tmp
+    - /dev/null
+landlock:
+  compatibility: hard_requirement
+network_policies:
+  model_provider:
+    endpoints:
+      - host: api.openai.com
+        port: 443
+        protocol: rest
+        enforcement: enforce
+        access: read-write
+    binaries:
+      - path: /usr/local/bin/python3.13
+# No grant for /target itself, /target/labels, /target/private, or /target/.git.
+# This fixed policy does not enforce current-question/current-chunk permissions.
+# Generated workers must not supply the trusted acceptance state or event journal.
+# Attach the configured provider through OpenShell; do not bake an actual key
+# into the image or pass it through sandbox environment variables.

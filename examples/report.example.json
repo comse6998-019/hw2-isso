@@ -1,0 +1,594 @@
+{
+  "format_note": "FORMAT ONLY: illustrative labels, counters, events, and termination; not a measured HW2 run. IDs, canonical quote/metadata, corpus hash, and prepared-manifest hash refer to the documented source inputs. Do not use these labels as ground truth.",
+  "target": {
+    "corpus_sha256": "f186563d6a1e702703386a25e5047e44eac3d666a7fe382d516c86dd47e5bf8e",
+    "query_set": "dev",
+    "prepared_manifest_sha256": "6a818ffce7488719dda3b90b5ff3ae9e603b81929202e238c06dbe4592a747ca"
+  },
+  "scan": {
+    "k": 3,
+    "alert_count": 30
+  },
+  "agent_kind": "mcp",
+  "budget": {
+    "max_tokens": 600000,
+    "used_tokens": 740,
+    "exhausted": false
+  },
+  "alerts": [
+    {
+      "alert_id": "dev-q07::about-your-visa::7",
+      "query_id": "dev-q07",
+      "chunk_id": "about-your-visa::7",
+      "status": "classified",
+      "label": 1,
+      "rationale": "The chunk distinguishes a visa from immigration status, which directly addresses the query.",
+      "evidence": [
+        "about-your-visa::7"
+      ],
+      "evidence_update": {
+        "status": "accepted",
+        "diff": "--- a/sandbox/work/evidence/dev-q07.json\n+++ b/sandbox/work/evidence/dev-q07.json\n@@ -1,4 +1,11 @@\n {\n   \"query_id\": \"dev-q07\",\n-  \"items\": []\n+  \"items\": [\n+    {\n+      \"chunk_id\": \"about-your-visa::7\",\n+      \"quote\": \"One of the most common sources of confusion is the difference between your visa and your status. Your visa is an entry document.\",\n+      \"source\": \"about-your-visa\",\n+      \"url\": \"https://isso.columbia.edu/content/about-your-visa\"\n+    }\n+  ]\n }\n",
+        "checks": {
+          "applies": true,
+          "current_item_only": true,
+          "grounded": true
+        },
+        "reason": "One item for the current chunk was appended to the current query packet."
+      }
+    },
+    {
+      "alert_id": "dev-q01::applying-your-i-20ds-2019::1",
+      "query_id": "dev-q01",
+      "chunk_id": "applying-your-i-20ds-2019::1",
+      "status": "error",
+      "label": null,
+      "rationale": "Format-only demonstration ended before this pair was classified.",
+      "evidence": [],
+      "evidence_update": {
+        "status": "skipped",
+        "diff": "",
+        "checks": {
+          "applies": null,
+          "current_item_only": null,
+          "grounded": null
+        },
+        "reason": "This pair was not classified before the illustrative run stopped."
+      }
+    },
+    {
+      "alert_id": "dev-q01::applying-your-i-20ds-2019::3",
+      "query_id": "dev-q01",
+      "chunk_id": "applying-your-i-20ds-2019::3",
+      "status": "error",
+      "label": null,
+      "rationale": "Format-only demonstration ended before this pair was classified.",
+      "evidence": [],
+      "evidence_update": {
+        "status": "skipped",
+        "diff": "",
+        "checks": {
+          "applies": null,
+          "current_item_only": null,
+          "grounded": null
+        },
+        "reason": "This pair was not classified before the illustrative run stopped."
+      }
+    },
+    {
+      "alert_id": "dev-q04::applying-your-transfer-i-20::0",
+      "query_id": "dev-q04",
+      "chunk_id": "applying-your-transfer-i-20::0",
+      "status": "error",
+      "label": null,
+      "rationale": "Format-only demonstration ended before this pair was classified.",
+      "evidence": [],
+      "evidence_update": {
+        "status": "skipped",
+        "diff": "",
+        "checks": {
+          "applies": null,
+          "current_item_only": null,
+          "grounded": null
+        },
+        "reason": "This pair was not classified before the illustrative run stopped."
+      }
+    },
+    {
+      "alert_id": "dev-q05::campus-work-f-and-j-students::0",
+      "query_id": "dev-q05",
+      "chunk_id": "campus-work-f-and-j-students::0",
+      "status": "classified",
+      "label": 0,
+      "rationale": "This chunk is an outline. It does not explain the steps to obtain work authorization after finding an on-campus job.",
+      "evidence": [
+        "campus-work-f-and-j-students::0"
+      ],
+      "evidence_update": {
+        "status": "skipped",
+        "diff": "",
+        "checks": {
+          "applies": null,
+          "current_item_only": null,
+          "grounded": null
+        },
+        "reason": "Label 0 skips evidence assembly."
+      }
+    },
+    {
+      "alert_id": "dev-q05::campus-work-f-and-j-students::1",
+      "query_id": "dev-q05",
+      "chunk_id": "campus-work-f-and-j-students::1",
+      "status": "error",
+      "label": null,
+      "rationale": "Format-only demonstration ended before this pair was classified.",
+      "evidence": [],
+      "evidence_update": {
+        "status": "skipped",
+        "diff": "",
+        "checks": {
+          "applies": null,
+          "current_item_only": null,
+          "grounded": null
+        },
+        "reason": "This pair was not classified before the illustrative run stopped."
+      }
+    },
+    {
+      "alert_id": "dev-q05::campus-work-f-and-j-students::7",
+      "query_id": "dev-q05",
+      "chunk_id": "campus-work-f-and-j-students::7",
+      "status": "error",
+      "label": null,
+      "rationale": "Format-only demonstration ended before this pair was classified.",
+      "evidence": [],
+      "evidence_update": {
+        "status": "skipped",
+        "diff": "",
+        "checks": {
+          "applies": null,
+          "current_item_only": null,
+          "grounded": null
+        },
+        "reason": "This pair was not classified before the illustrative run stopped."
+      }
+    },
+    {
+      "alert_id": "dev-q01::changing-f-1-student-status-us::1",
+      "query_id": "dev-q01",
+      "chunk_id": "changing-f-1-student-status-us::1",
+      "status": "error",
+      "label": null,
+      "rationale": "Format-only demonstration ended before this pair was classified.",
+      "evidence": [],
+      "evidence_update": {
+        "status": "skipped",
+        "diff": "",
+        "checks": {
+          "applies": null,
+          "current_item_only": null,
+          "grounded": null
+        },
+        "reason": "This pair was not classified before the illustrative run stopped."
+      }
+    },
+    {
+      "alert_id": "dev-q06::documents-needed-travel-scholar::16",
+      "query_id": "dev-q06",
+      "chunk_id": "documents-needed-travel-scholar::16",
+      "status": "error",
+      "label": null,
+      "rationale": "Format-only demonstration ended before this pair was classified.",
+      "evidence": [],
+      "evidence_update": {
+        "status": "skipped",
+        "diff": "",
+        "checks": {
+          "applies": null,
+          "current_item_only": null,
+          "grounded": null
+        },
+        "reason": "This pair was not classified before the illustrative run stopped."
+      }
+    },
+    {
+      "alert_id": "dev-q03::entering-us-f-j-students::15",
+      "query_id": "dev-q03",
+      "chunk_id": "entering-us-f-j-students::15",
+      "status": "error",
+      "label": null,
+      "rationale": "Format-only demonstration ended before this pair was classified.",
+      "evidence": [],
+      "evidence_update": {
+        "status": "skipped",
+        "diff": "",
+        "checks": {
+          "applies": null,
+          "current_item_only": null,
+          "grounded": null
+        },
+        "reason": "This pair was not classified before the illustrative run stopped."
+      }
+    },
+    {
+      "alert_id": "dev-q09::entering-us-f-j-students::16",
+      "query_id": "dev-q09",
+      "chunk_id": "entering-us-f-j-students::16",
+      "status": "error",
+      "label": null,
+      "rationale": "Format-only demonstration ended before this pair was classified.",
+      "evidence": [],
+      "evidence_update": {
+        "status": "skipped",
+        "diff": "",
+        "checks": {
+          "applies": null,
+          "current_item_only": null,
+          "grounded": null
+        },
+        "reason": "This pair was not classified before the illustrative run stopped."
+      }
+    },
+    {
+      "alert_id": "dev-q04::extending-begin-new-program-f-j-students::0",
+      "query_id": "dev-q04",
+      "chunk_id": "extending-begin-new-program-f-j-students::0",
+      "status": "error",
+      "label": null,
+      "rationale": "Format-only demonstration ended before this pair was classified.",
+      "evidence": [],
+      "evidence_update": {
+        "status": "skipped",
+        "diff": "",
+        "checks": {
+          "applies": null,
+          "current_item_only": null,
+          "grounded": null
+        },
+        "reason": "This pair was not classified before the illustrative run stopped."
+      }
+    },
+    {
+      "alert_id": "dev-q04::extending-begin-new-program-f-j-students::6",
+      "query_id": "dev-q04",
+      "chunk_id": "extending-begin-new-program-f-j-students::6",
+      "status": "error",
+      "label": null,
+      "rationale": "Format-only demonstration ended before this pair was classified.",
+      "evidence": [],
+      "evidence_update": {
+        "status": "skipped",
+        "diff": "",
+        "checks": {
+          "applies": null,
+          "current_item_only": null,
+          "grounded": null
+        },
+        "reason": "This pair was not classified before the illustrative run stopped."
+      }
+    },
+    {
+      "alert_id": "dev-q02::f-1-cpt-curricular-practical-training::1",
+      "query_id": "dev-q02",
+      "chunk_id": "f-1-cpt-curricular-practical-training::1",
+      "status": "error",
+      "label": null,
+      "rationale": "Format-only demonstration ended before this pair was classified.",
+      "evidence": [],
+      "evidence_update": {
+        "status": "skipped",
+        "diff": "",
+        "checks": {
+          "applies": null,
+          "current_item_only": null,
+          "grounded": null
+        },
+        "reason": "This pair was not classified before the illustrative run stopped."
+      }
+    },
+    {
+      "alert_id": "dev-q02::f-1-cpt-curricular-practical-training::14",
+      "query_id": "dev-q02",
+      "chunk_id": "f-1-cpt-curricular-practical-training::14",
+      "status": "error",
+      "label": null,
+      "rationale": "Format-only demonstration ended before this pair was classified.",
+      "evidence": [],
+      "evidence_update": {
+        "status": "skipped",
+        "diff": "",
+        "checks": {
+          "applies": null,
+          "current_item_only": null,
+          "grounded": null
+        },
+        "reason": "This pair was not classified before the illustrative run stopped."
+      }
+    },
+    {
+      "alert_id": "dev-q02::f-1-cpt-curricular-practical-training::15",
+      "query_id": "dev-q02",
+      "chunk_id": "f-1-cpt-curricular-practical-training::15",
+      "status": "error",
+      "label": null,
+      "rationale": "Format-only demonstration ended before this pair was classified.",
+      "evidence": [],
+      "evidence_update": {
+        "status": "skipped",
+        "diff": "",
+        "checks": {
+          "applies": null,
+          "current_item_only": null,
+          "grounded": null
+        },
+        "reason": "This pair was not classified before the illustrative run stopped."
+      }
+    },
+    {
+      "alert_id": "dev-q09::glass::20",
+      "query_id": "dev-q09",
+      "chunk_id": "glass::20",
+      "status": "error",
+      "label": null,
+      "rationale": "Format-only demonstration ended before this pair was classified.",
+      "evidence": [],
+      "evidence_update": {
+        "status": "skipped",
+        "diff": "",
+        "checks": {
+          "applies": null,
+          "current_item_only": null,
+          "grounded": null
+        },
+        "reason": "This pair was not classified before the illustrative run stopped."
+      }
+    },
+    {
+      "alert_id": "dev-q03::incoming-student-programs::5",
+      "query_id": "dev-q03",
+      "chunk_id": "incoming-student-programs::5",
+      "status": "error",
+      "label": null,
+      "rationale": "Format-only demonstration ended before this pair was classified.",
+      "evidence": [],
+      "evidence_update": {
+        "status": "skipped",
+        "diff": "",
+        "checks": {
+          "applies": null,
+          "current_item_only": null,
+          "grounded": null
+        },
+        "reason": "This pair was not classified before the illustrative run stopped."
+      }
+    },
+    {
+      "alert_id": "dev-q03::incoming-student-programs::9",
+      "query_id": "dev-q03",
+      "chunk_id": "incoming-student-programs::9",
+      "status": "error",
+      "label": null,
+      "rationale": "Format-only demonstration ended before this pair was classified.",
+      "evidence": [],
+      "evidence_update": {
+        "status": "skipped",
+        "diff": "",
+        "checks": {
+          "applies": null,
+          "current_item_only": null,
+          "grounded": null
+        },
+        "reason": "This pair was not classified before the illustrative run stopped."
+      }
+    },
+    {
+      "alert_id": "dev-q08::reporting-your-arrival-students::1",
+      "query_id": "dev-q08",
+      "chunk_id": "reporting-your-arrival-students::1",
+      "status": "error",
+      "label": null,
+      "rationale": "Format-only demonstration ended before this pair was classified.",
+      "evidence": [],
+      "evidence_update": {
+        "status": "skipped",
+        "diff": "",
+        "checks": {
+          "applies": null,
+          "current_item_only": null,
+          "grounded": null
+        },
+        "reason": "This pair was not classified before the illustrative run stopped."
+      }
+    },
+    {
+      "alert_id": "dev-q08::reporting-your-arrival-students::2",
+      "query_id": "dev-q08",
+      "chunk_id": "reporting-your-arrival-students::2",
+      "status": "error",
+      "label": null,
+      "rationale": "Format-only demonstration ended before this pair was classified.",
+      "evidence": [],
+      "evidence_update": {
+        "status": "skipped",
+        "diff": "",
+        "checks": {
+          "applies": null,
+          "current_item_only": null,
+          "grounded": null
+        },
+        "reason": "This pair was not classified before the illustrative run stopped."
+      }
+    },
+    {
+      "alert_id": "dev-q07::reporting-your-arrival-students::6",
+      "query_id": "dev-q07",
+      "chunk_id": "reporting-your-arrival-students::6",
+      "status": "error",
+      "label": null,
+      "rationale": "Format-only demonstration ended before this pair was classified.",
+      "evidence": [],
+      "evidence_update": {
+        "status": "skipped",
+        "diff": "",
+        "checks": {
+          "applies": null,
+          "current_item_only": null,
+          "grounded": null
+        },
+        "reason": "This pair was not classified before the illustrative run stopped."
+      }
+    },
+    {
+      "alert_id": "dev-q10::resources-scholars::1",
+      "query_id": "dev-q10",
+      "chunk_id": "resources-scholars::1",
+      "status": "error",
+      "label": null,
+      "rationale": "Format-only demonstration ended before this pair was classified.",
+      "evidence": [],
+      "evidence_update": {
+        "status": "skipped",
+        "diff": "",
+        "checks": {
+          "applies": null,
+          "current_item_only": null,
+          "grounded": null
+        },
+        "reason": "This pair was not classified before the illustrative run stopped."
+      }
+    },
+    {
+      "alert_id": "dev-q10::resources-scholars::3",
+      "query_id": "dev-q10",
+      "chunk_id": "resources-scholars::3",
+      "status": "error",
+      "label": null,
+      "rationale": "Format-only demonstration ended before this pair was classified.",
+      "evidence": [],
+      "evidence_update": {
+        "status": "skipped",
+        "diff": "",
+        "checks": {
+          "applies": null,
+          "current_item_only": null,
+          "grounded": null
+        },
+        "reason": "This pair was not classified before the illustrative run stopped."
+      }
+    },
+    {
+      "alert_id": "dev-q10::resources-scholars::5",
+      "query_id": "dev-q10",
+      "chunk_id": "resources-scholars::5",
+      "status": "error",
+      "label": null,
+      "rationale": "Format-only demonstration ended before this pair was classified.",
+      "evidence": [],
+      "evidence_update": {
+        "status": "skipped",
+        "diff": "",
+        "checks": {
+          "applies": null,
+          "current_item_only": null,
+          "grounded": null
+        },
+        "reason": "This pair was not classified before the illustrative run stopped."
+      }
+    },
+    {
+      "alert_id": "dev-q09::resources-students::7",
+      "query_id": "dev-q09",
+      "chunk_id": "resources-students::7",
+      "status": "error",
+      "label": null,
+      "rationale": "Format-only demonstration ended before this pair was classified.",
+      "evidence": [],
+      "evidence_update": {
+        "status": "skipped",
+        "diff": "",
+        "checks": {
+          "applies": null,
+          "current_item_only": null,
+          "grounded": null
+        },
+        "reason": "This pair was not classified before the illustrative run stopped."
+      }
+    },
+    {
+      "alert_id": "dev-q06::travel-signatures-and-ds-2019-reprints-j-scholar::2",
+      "query_id": "dev-q06",
+      "chunk_id": "travel-signatures-and-ds-2019-reprints-j-scholar::2",
+      "status": "error",
+      "label": null,
+      "rationale": "Format-only demonstration ended before this pair was classified.",
+      "evidence": [],
+      "evidence_update": {
+        "status": "skipped",
+        "diff": "",
+        "checks": {
+          "applies": null,
+          "current_item_only": null,
+          "grounded": null
+        },
+        "reason": "This pair was not classified before the illustrative run stopped."
+      }
+    },
+    {
+      "alert_id": "dev-q06::travel-signatures-and-ds-2019-reprints-j-scholar::7",
+      "query_id": "dev-q06",
+      "chunk_id": "travel-signatures-and-ds-2019-reprints-j-scholar::7",
+      "status": "error",
+      "label": null,
+      "rationale": "Format-only demonstration ended before this pair was classified.",
+      "evidence": [],
+      "evidence_update": {
+        "status": "skipped",
+        "diff": "",
+        "checks": {
+          "applies": null,
+          "current_item_only": null,
+          "grounded": null
+        },
+        "reason": "This pair was not classified before the illustrative run stopped."
+      }
+    },
+    {
+      "alert_id": "dev-q08::your-first-weeks-students::1",
+      "query_id": "dev-q08",
+      "chunk_id": "your-first-weeks-students::1",
+      "status": "error",
+      "label": null,
+      "rationale": "Format-only demonstration ended before this pair was classified.",
+      "evidence": [],
+      "evidence_update": {
+        "status": "skipped",
+        "diff": "",
+        "checks": {
+          "applies": null,
+          "current_item_only": null,
+          "grounded": null
+        },
+        "reason": "This pair was not classified before the illustrative run stopped."
+      }
+    },
+    {
+      "alert_id": "dev-q07::your-first-weeks-students::3",
+      "query_id": "dev-q07",
+      "chunk_id": "your-first-weeks-students::3",
+      "status": "error",
+      "label": null,
+      "rationale": "Format-only demonstration ended before this pair was classified.",
+      "evidence": [],
+      "evidence_update": {
+        "status": "skipped",
+        "diff": "",
+        "checks": {
+          "applies": null,
+          "current_item_only": null,
+          "grounded": null
+        },
+        "reason": "This pair was not classified before the illustrative run stopped."
+      }
+    }
+  ]
+}

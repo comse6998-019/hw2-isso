@@ -1,0 +1,17 @@
+# Local environment and caches
+.venv/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+.DS_Store
+.env
+.env.*
+!.env.example
+
+# LaTeX build files; keep the assignment PDF
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.fls
+*.fdb_latexmk

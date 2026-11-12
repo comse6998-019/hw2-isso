@@ -1,0 +1,29 @@
+# Format example only. Keep these model and budget settings identical for both agents.
+# The model name is carried over from the submitted HW1 configuration.
+[scan]
+corpus_version = "f186563d6a1e"
+k = 3
+
+[model]
+provider = "openai"
+name = "gpt-4.1-mini-2025-04-14"
+temperature = 0
+
+[budget]
+max_tokens = 600000
+output_allowance = 1024
+max_steps = 300
+no_progress_limit = 3
+
+[agent]
+kind = "codeact"
+
+[mcp]
+config = "mcp.json"
+
+[sandbox]
+policy = "policy.yaml"
+
+# For injection experiments, use this same separately hashed overlay for both agents:
+# [experiment]
+# injection_overlay = "fixtures/injection.json"

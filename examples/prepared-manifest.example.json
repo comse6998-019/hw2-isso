@@ -1,0 +1,91 @@
+{
+  "format_note": "Illustrative offline preparation manifest. This exact serialization is not required; freeze and document the bytes and hashes of your own equivalent prepared inputs before experiments.",
+  "corpus_version": "f186563d6a1e",
+  "k": 3,
+  "source_corpus": {
+    "source_path": "data/embeddings/chunks.json",
+    "sha256": "f186563d6a1e702703386a25e5047e44eac3d666a7fe382d516c86dd47e5bf8e"
+  },
+  "sanitized_view": {
+    "logical_path": "prepared/chunks.json",
+    "sha256": "062b78d43e7be89df33d3fc1d6d315e041dee2ce3dfee946040509c3f6822354",
+    "record_count": 595,
+    "fields": [
+      "id",
+      "source",
+      "url",
+      "heading",
+      "text",
+      "breadcrumb",
+      "audience"
+    ],
+    "serialization": "Python json.dumps(view, ensure_ascii=False).encode(\"utf-8\"), no trailing newline; preserve source record order; retain only records with archived == false."
+  },
+  "query_sets": {
+    "dev": {
+      "query_count": 10,
+      "pair_count": 30,
+      "queries": {
+        "source_path": "agent/queries/dev/queries.json",
+        "sha256": "92172c01b2a570371d1949040d57b75247107609285b6e747d8adc03436d8e3a"
+      },
+      "candidate_source": {
+        "source_path": "agent/runs/dev-full/report.json",
+        "sha256": "477365a8372d5e4e778a761048d8f3c35a720aee3516ab69ff82301766e71535"
+      },
+      "candidates": {
+        "example_path": "candidates.dev.example.json",
+        "logical_path": "prepared/dev/candidates.json",
+        "sha256": "fce0c82c8e25958fbf1e32e1183a610f521efeaedaba6a42025b0333df0cbe15",
+        "serialization": "UTF-8 json.dumps(pairs, ensure_ascii=False, indent=2) plus one LF; preserve full-report row order; project only alert_id, query_id, chunk_id.",
+        "derivation": "For each source report row in its existing order: copy alert_id unchanged; set query_id to test_id; set chunk_id to path + \"::\" + the decimal integer line. Emit no labels, rationales, evidence, or scores."
+      }
+    },
+    "heldout-a": {
+      "query_count": 8,
+      "pair_count": 24,
+      "queries": {
+        "source_path": "agent/queries/heldout-a/queries.json",
+        "sha256": "f1b43a8be81901eb85445a04a2f60b6777dd5b5b7e7c00f1de68584247f2fc7d"
+      },
+      "candidate_source": {
+        "source_path": "agent/runs/heldout-a-full/report.json",
+        "sha256": "2440cd6eea8942e50729b93591662066dfbb8bdb843302003599437149c6cc9f"
+      },
+      "candidates": {
+        "example_path": "candidates.heldout-a.example.json",
+        "logical_path": "prepared/heldout-a/candidates.json",
+        "sha256": "218a190d73a7434037884a44ea9172ed038fa949a5fb84fa9d601b2773c5e8b1",
+        "serialization": "UTF-8 json.dumps(pairs, ensure_ascii=False, indent=2) plus one LF; preserve full-report row order; project only alert_id, query_id, chunk_id.",
+        "derivation": "For each source report row in its existing order: copy alert_id unchanged; set query_id to test_id; set chunk_id to path + \"::\" + the decimal integer line. Emit no labels, rationales, evidence, or scores."
+      }
+    },
+    "heldout-b": {
+      "query_count": 8,
+      "pair_count": 24,
+      "queries": {
+        "source_path": "agent/queries/heldout-b/queries.json",
+        "sha256": "dec998d89a07eeb3a91622f02fac9ccfadd61697bd581ddcec1587fb73bc83c2"
+      },
+      "candidate_source": {
+        "source_path": "agent/runs/heldout-b-full/report.json",
+        "sha256": "8014656e3b56629512f14d6c3f70bc8687f1e0deadfe1871344f66c6f9aac800"
+      },
+      "candidates": {
+        "example_path": "candidates.heldout-b.example.json",
+        "logical_path": "prepared/heldout-b/candidates.json",
+        "sha256": "cbc1e910975809e2e5fed022e4ab157c10fb862c2d7fab458c097ff228f44fab",
+        "serialization": "UTF-8 json.dumps(pairs, ensure_ascii=False, indent=2) plus one LF; preserve full-report row order; project only alert_id, query_id, chunk_id.",
+        "derivation": "For each source report row in its existing order: copy alert_id unchanged; set query_id to test_id; set chunk_id to path + \"::\" + the decimal integer line. Emit no labels, rationales, evidence, or scores."
+      }
+    }
+  },
+  "neighbors": {
+    "example_path": "neighbors.example.json",
+    "logical_path": "prepared/neighbors.json",
+    "sha256": "db31d15763dba6d4ac7ad5cc00d74231a92d1b18c2a480afaf83b29d6b568261",
+    "record_count": 595,
+    "definition": "Use the non-archived canonical view. Group chunk IDs by page, sort each page by integer chunk index, and assign the immediately previous and next existing IDs on that page. List previous before next; omit a missing page-edge neighbor. Sort pages lexicographically and emit each page in index order. An alert can read the frozen candidates for its query plus their immediate neighbors only; this set never expands after a read.",
+    "serialization": "UTF-8 json.dumps(records, ensure_ascii=False, indent=2) plus one LF; each record contains chunk_id then neighbors."
+  }
+}

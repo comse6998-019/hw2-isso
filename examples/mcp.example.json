@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "isso": {
+      "command": "/app/agent/.venv/bin/python",
+      "args": [
+        "-m", "your_isso_server",
+        "--corpus", "/target/corpus/chunks.json",
+        "--queries", "/target/queries",
+        "--manifests", "/target/manifests",
+        "--packet-root", "/sandbox/work/evidence"
+      ],
+      "env": {}
+    }
+  }
+}
